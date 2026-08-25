@@ -32,7 +32,15 @@ public class ContactTest {
     }
 
     @Test
-    void toString_containsPhone() {
+    void toString_containsPhoneNumber() {
         assertTrue(contact.toString().contains("+1 617 555 0101"));
     }
+
+
+    @Test
+    void constructor_twoObjectsWithSameNumber_NotSameObject(){
+      Contact contact2 = new Contact("Vyshnavi Rayabharapu", "+1 617 555 0101");
+      assertNotEquals(contact, contact2);
+    }
+
 }

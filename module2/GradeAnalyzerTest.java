@@ -1,3 +1,4 @@
+import org.hamcrest.core.IsInstanceOf;
 import org.junit.jupiter.api.Test; 
 import static org.junit.jupiter.api.Assertions.*; 
 import java.util.ArrayList; 
@@ -34,5 +35,11 @@ public class GradeAnalyzerTest {
     void calculateAverage_handlesAllSameValues() { 
         ArrayList<Integer> scores = new ArrayList<>(Arrays.asList(88, 88, 88)); 
         assertEquals(88.0, GradeAnalyzer.calculateAverage(scores)); 
+    }
+
+    @Test
+    void calculateAverage_returnsCorrectAverage_forTypicalScores2() { 
+        ArrayList<Integer> scores = new ArrayList<>(Arrays.asList(1,2,3,4,5,6,7,8,9,10)); 
+        assertEquals(5.5, GradeAnalyzer.calculateAverage(scores));
     }
 }
